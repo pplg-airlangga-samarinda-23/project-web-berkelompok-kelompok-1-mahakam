@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: rgba(27, 61, 105, 0.9); /* Transparan agar background terlihat */
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "🏠";
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4d5d7d;
+    transform: translateY(-3px);
+}
+
+/* Konten Utama */
+main {
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    padding: 20px;
+}
+
+.fasilitas h2, .fasilitas h3 {
+    color: #1b3d69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.fasilitas h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 30px;
+}
+
+/* Galeri */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Daftar Fasilitas */
+.fasilitas ul {
+    margin-top: 20px;
+    padding: 0 20px;
+    list-style-type: disc;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.fasilitas ul li {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* Animasi Transisi pada Bagian H2 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fasilitas h2, .fasilitas h3 {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Style untuk modal (gambar full-screen) */
+.modal {
+    display: none; /* Disembunyikan secara default */
+    position: fixed;
+    z-index: 100;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Tombol silang (close) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #1b3d69;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
